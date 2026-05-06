@@ -1,0 +1,29 @@
+# Ignore local environment files
+.env
+
+# Vendor directory (installed during Docker build)
+vendor/
+
+# Node modules
+node_modules/
+
+# Local development artifacts
+.git/
+.idea/
+.vscode/
+*.log
+
+# Local database (will be on persistent volume in production)
+database/database.sqlite
+
+# Docker config dir (already in the image)
+docker/
+
+# Test files
+tests/
+
+# Development-only files
+.editorconfig
+.styleci.yml
+phpunit.xml
+CHANGELOG.md

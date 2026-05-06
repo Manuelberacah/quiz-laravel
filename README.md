@@ -41,6 +41,22 @@ A flexible, extensible Quiz System built with Laravel that supports multiple que
    php artisan serve
    ```
 
+## Docker Setup (Recommended)
+
+If you have Docker and Docker Compose installed, you can run the entire system with a single command:
+
+1. **Build and Start the Containers**
+   ```bash
+   docker-compose up -d --build
+   ```
+2. **The application will be available at:**
+   `http://localhost:8080`
+
+3. **To stop the application:**
+   ```bash
+   docker-compose down
+   ```
+
 ## Admin Access
 Currently, authentication is disabled as per requirements. You can access the Quiz Creator at:
 `http://localhost:8000/admin/quizzes`

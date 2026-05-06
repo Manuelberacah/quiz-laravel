@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: quiz-system:latest
+    container_name: quiz-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./database:/app/database
+      - ./storage/app/public:/app/storage/app/public
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_KEY=base64:nwURzxV/Rrq0g1ecyybK2HPcM5kZcl3OF0GuDusmM7w=
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/app/database/database.sqlite
+      - LOG_CHANNEL=stderr
