@@ -44,11 +44,15 @@ RUN composer install \
     --no-dev \
     --no-interaction \
     --no-progress \
+    --no-scripts \
     --optimize-autoloader \
     --prefer-dist
 
 # Copy the rest of the application source code
 COPY . .
+
+# Run post-autoload-dump scripts now that artisan and application code are present
+RUN composer dump-autoload --optimize
 
 # =============================================================================
 # Stage 2: Production — Lightweight final image
