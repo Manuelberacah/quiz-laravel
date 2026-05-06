@@ -16,8 +16,6 @@ node_modules/
 # Local database (will be on persistent volume in production)
 database/database.sqlite
 
-# Docker config dir (already in the image)
-docker/
 
 # Test files
 tests/
