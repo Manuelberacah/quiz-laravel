@@ -9,6 +9,9 @@ if [ ! -f "$DB_DATABASE" ]; then
     mkdir -p "$(dirname "$DB_DATABASE")"
     touch "$DB_DATABASE"
 fi
+# Fix ownership of the database directory and file so SQLite can write temporary journal files
+chown -R www-data:www-data "$(dirname "$DB_DATABASE")"
+chmod -R 775 "$(dirname "$DB_DATABASE")"
 
 # Ensure storage directories exist and are writable
 mkdir -p /app/storage/app/public
